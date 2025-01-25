@@ -16,19 +16,25 @@ const { message, address, signature } = program.opts();
 
 (async () => {
     try {
-        const result = await verifyPersonalMessageSignature(
+        const _pubKey = await verifyPersonalMessageSignature(
             new TextEncoder().encode(message),
             signature,
             { address }
         );
-        console.log(result); // success
+        console.log(JSON.stringify({
+            success: true,
+        }));
+        process.exit(0);
     } catch (error) {
-        // something went wrong:
         // - "Signature is not valid for the provided address"
         // - "Signature is not valid for the provided message"
         // - "Unsupported signature scheme"
         // - "The string to be decoded is not correctly encoded"
         // - "Unsupported signature scheme"
-        throw error;
+        console.error(JSON.stringify({
+            success: false,
+            error: error instanceof Error ? error.message : String(error),
+        }));
+        process.exit(1);
     }
 })();
