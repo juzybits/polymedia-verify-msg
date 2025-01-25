@@ -2,12 +2,14 @@
 
 import { verifyPersonalMessageSignature } from '@mysten/sui/verify';
 import { Command } from 'commander';
+import { getVersion } from './lib/version';
 
 const program = new Command();
 
 program
     .name('polymedia-verify-msg')
     .description('Verify a Sui personal message signature')
+    .version(getVersion(), '-v, --version')
     .requiredOption('-m, --message <string>', 'message that was signed')
     .requiredOption('-a, --address <string>', 'signer address')
     .requiredOption('-s, --signature <string>', 'signature to verify');
