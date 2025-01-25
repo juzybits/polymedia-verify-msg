@@ -47,7 +47,7 @@ Error (exit code 1):
 ```json
 {
     "success": false,
-    "error": "Signature is not valid for the provided message"
+    "error": "The error message"
 }
 ```
 
