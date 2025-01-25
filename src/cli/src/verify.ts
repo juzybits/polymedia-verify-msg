@@ -3,7 +3,7 @@
 import { verifyPersonalMessageSignature } from "@mysten/sui/verify";
 import { Command } from "commander";
 
-import { getVersion } from "./lib/version";
+import { getVersion } from "./lib/version.js";
 
 type CommandOptions = {
     message: string;
