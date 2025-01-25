@@ -21,7 +21,7 @@
         "clean": "rm -rf dist/ node_modules/ .turbo/",
         "dev": "tsc --watch --preserveWatchOutput",
         "lint": "eslint src/ --report-unused-disable-directives --max-warnings 0",
-        "prepublishOnly": "pnpm clean && pnpm i && pnpm build && cp ../../README.md ../../LICENSE dist/",
+        "prepublishOnly": "pnpm clean && pnpm i && pnpm build && cp ../../LICENSE ../../README.md .",
         "typecheck": "tsc --noEmit",
         "verify": "tsx src/verify.ts"
     },
@@ -51,7 +51,9 @@
         "access": "public"
     },
     "files": [
-        "dist/"
+        "dist/",
+        "LICENSE",
+        "README.md"
     ],
     "bin": {
         "polymedia-verify-msg": "./dist/verify.js"
