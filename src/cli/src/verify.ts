@@ -1,10 +1,12 @@
+#!/usr/bin/env node
+
 import { verifyPersonalMessageSignature } from '@mysten/sui/verify';
 import { Command } from 'commander';
 
 const program = new Command();
 
 program
-    .name('verify')
+    .name('polymedia-verify-msg')
     .description('Verify a Sui personal message signature')
     .requiredOption('-m, --message <string>', 'message that was signed')
     .requiredOption('-a, --address <string>', 'signer address')

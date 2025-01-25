@@ -1,19 +1,27 @@
 {
-    "private": true,
-    "version": "0.0.0",
-    "name": "polymedia-verify-msg",
+    "private": false,
+    "version": "0.0.1",
+    "name": "@polymedia/verify-msg",
     "author": "@juzybits (https://polymedia.app)",
+    "homepage": "https://github.com/juzybits/polymedia-verify-msg",
+    "description": "Verify a Sui personal message signature",
     "license": "Apache-2.0",
     "repository": {
         "type": "git",
         "url": "https://github.com/juzybits/polymedia-verify-msg"
     },
-    "keywords": [],
+    "keywords": [
+        "polymedia",
+        "sui",
+        "verify",
+        "signature"
+    ],
     "scripts": {
         "build": "tsc --build",
         "clean": "rm -rf dist/ node_modules/ .turbo/",
         "dev": "tsc --watch --preserveWatchOutput",
         "lint": "eslint src/ --report-unused-disable-directives --max-warnings 0",
+        "prepublishOnly": "pnpm clean && pnpm build",
         "typecheck": "tsc --noEmit",
         "verify": "tsx src/verify.ts"
     },
@@ -38,5 +46,14 @@
     "engines": {
         "node": ">=18"
     },
-    "packageManager": "pnpm@9.15.1"
+    "packageManager": "pnpm@9.15.1",
+    "publishConfig": {
+        "access": "public"
+    },
+    "files": [
+        "dist/"
+    ],
+    "bin": {
+        "polymedia-verify-msg": "./dist/verify.js"
+    }
 }

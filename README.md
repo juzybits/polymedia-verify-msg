@@ -13,7 +13,7 @@ https://github.com/MystenLabs/ts-sdks/blob/main/packages/typescript/src/verify/v
 ## Usage
 
 ```
-Usage: verify [options]
+Usage: polymedia-verify-msg [options]
 
 Verify a Sui personal message signature
 
