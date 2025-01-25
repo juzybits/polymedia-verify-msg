@@ -18,6 +18,7 @@ Usage: polymedia-verify-msg [options]
 Verify a Sui personal message signature
 
 Options:
+  -v, --version             output the version number
   -m, --message <string>    message that was signed
   -a, --address <string>    signer address
   -s, --signature <string>  signature to verify

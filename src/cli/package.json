@@ -1,6 +1,6 @@
 {
     "private": false,
-    "version": "0.0.1",
+    "version": "0.0.2",
     "name": "@polymedia/verify-msg",
     "author": "@juzybits (https://polymedia.app)",
     "homepage": "https://github.com/juzybits/polymedia-verify-msg",
@@ -21,7 +21,7 @@
         "clean": "rm -rf dist/ node_modules/ .turbo/",
         "dev": "tsc --watch --preserveWatchOutput",
         "lint": "eslint src/ --report-unused-disable-directives --max-warnings 0",
-        "prepublishOnly": "pnpm clean && pnpm build && cp ../../README.md ../../LICENSE dist/",
+        "prepublishOnly": "pnpm clean && pnpm i && pnpm build && cp ../../README.md ../../LICENSE dist/",
         "typecheck": "tsc --noEmit",
         "verify": "tsx src/verify.ts"
     },
