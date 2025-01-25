@@ -5,6 +5,12 @@ import { Command } from "commander";
 
 import { getVersion } from "./lib/version";
 
+type CommandOptions = {
+    message: string;
+    address: string;
+    signature: string;
+};
+
 const program = new Command();
 
 program
@@ -17,7 +23,7 @@ program
 
 program.parse();
 
-const { message, address, signature } = program.opts();
+const { message, address, signature } = program.opts<CommandOptions>();
 
 (async () => {
     try {

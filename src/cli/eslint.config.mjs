@@ -72,7 +72,7 @@ export default [
         },
     },
     {
-        files: ["src/core/**/*.ts?(x)", "src/sdk/**/*.ts?(x)"],
+        files: ["src/cli/**/*.ts?(x)", "src/core/**/*.ts?(x)", "src/sdk/**/*.ts?(x)"],
         rules: {
             "import/extensions": ["error", "ignorePackages", { ts: "never", tsx: "never" }],
         },
