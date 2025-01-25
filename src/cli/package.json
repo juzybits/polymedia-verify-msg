@@ -21,7 +21,7 @@
         "clean": "rm -rf dist/ node_modules/ .turbo/",
         "dev": "tsc --watch --preserveWatchOutput",
         "lint": "eslint src/ --report-unused-disable-directives --max-warnings 0",
-        "prepublishOnly": "pnpm clean && pnpm build",
+        "prepublishOnly": "pnpm clean && pnpm i && pnpm build",
         "typecheck": "tsc --noEmit",
         "verify": "tsx src/verify.ts"
     },
