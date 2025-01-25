@@ -1,9 +1,18 @@
 import { verifyPersonalMessageSignature } from '@mysten/sui/verify';
+import { Command } from 'commander';
 
-// TODO read from stdin
-const message = "Hello Sui!";
-const address = "0x9859bde15e867d37256aa080b5d092a2ed09347601ebc751c4478cf26f882bea";
-const signature = "AK8wR2Yv/Rf8YVFSAXIHNVPjOHfRiM88fi4lKyEtWBbyz8sui8gIlIPZAPhk/nnuAV6J1FWdTcVDEL1YlK08XAM7AdEIr//TRcmBsxmWwuzr9KVoj/MN1Vw+eHF1eqmckg==";
+const program = new Command();
+
+program
+    .name('verify')
+    .description('Verify a Sui personal message signature')
+    .requiredOption('-m, --message <string>', 'message that was signed')
+    .requiredOption('-a, --address <string>', 'signer address')
+    .requiredOption('-s, --signature <string>', 'signature to verify');
+
+program.parse();
+
+const { message, address, signature } = program.opts();
 
 (async () => {
     try {
