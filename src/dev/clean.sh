@@ -7,8 +7,5 @@ set -o pipefail     # Prevent errors in a pipeline from being masked
 SCRIPT_DIR="$( dirname "$(readlink -f "${BASH_SOURCE[0]}")" )"
 PROJECT_ROOT="$( cd "$SCRIPT_DIR/../.." && pwd )"
 
-cd "$PROJECT_ROOT/src/sui"
-rm -rf .coverage_map.mvcov .trace build traces
-
 cd "$PROJECT_ROOT/src/cli"
 pnpm clean
